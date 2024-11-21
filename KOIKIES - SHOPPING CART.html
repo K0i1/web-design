@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOIKIES - Shopping Cart</title>
+    <style>
+        /* Add your styling here */
+        body {
+            font-family: Arial, sans-serif;
+             background-image: url("../../Pictures/Screenshots/Screenshot 2024-11-02 233551.png");
+            color: #4A4A4A;
+            margin: 0;
+            padding: 0;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item h3 {
+            margin: 0;
+        }
+        .cart-item p {
+            margin: 5px 0;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-controls button {
+            padding: 5px;
+            margin: 0 10px;
+            background-color: #9A9F69;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quantity-controls input {
+            width: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .checkout-btn {
+            display: block;
+            margin: 30px 0;
+            padding: 15px;
+            text-align: center;
+            background-color: #888E4D;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .checkout-btn:hover {
+            background-color: #6c6f3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        <div class="total" id="cartTotal">Total: RM0.00</div>
+        <button class="checkout-btn" onclick="secureCheckout()">Secure Checkout</button>
+    </div>
+
+    <script>
+        // Load cart items from localStorage and display
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        function displayCartItems() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            cartItems.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                cartItemsContainer.innerHTML += `
+                    <div class="cart-item">
+                        <div>
+                            <h3>${item.name}</h3>
+                            <p>RM${item.price} x ${item.quantity} = RM${itemTotal}</p>
+                        </div>
+                        <div class="quantity-controls">
+                            <button onclick="updateQuantity(${index}, -1)">-</button>
+                            <input type="text" value="${item.quantity}" readonly>
+                            <button onclick="updateQuantity(${index}, 1)">+</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            cartTotal.innerText = `Total: RM${total.toFixed(2)}`;
+        }
+
+        // Update item quantity
+        function updateQuantity(index, change) {
+            cartItems[index].quantity += change;
+            if (cartItems[index].quantity <= 0) {
+                cartItems.splice(index, 1);
+            }
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCartItems();
+        }
+
+        // Secure Checkout function
+        function secureCheckout() {
+    alert("Thank you for your purchase!"); // Optional confirmation message
+    localStorage.removeItem('cartItems'); // Clears the cart after checkout
+    window.location.href = "KOIKIES - RECEIPT.html"; // Redirects to the thank-you page
+}
+
+        displayCartItems();
+    </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover KOIKIES - where we create delicious matcha cookies to spread joy and happiness!">
+    <title>KOIKIES - About Us</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            margin: 0;
+            padding: 0;
+            color: #4A4A4A;
+        }
+
+        /* Header */
+        header {
+            background-color: #9A9F69;
+            color: white;
+            padding: 15px;
+            position: static;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+        }
+		
+		nav a:hover {
+            color:#C4E6A6;
+		}
+		
+		/* Account Icon */
+         .account-icon {
+            margin-right: 20px; 
+       }
+
+       .account-icon img {
+            width: 25px;
+            height: 25px;
+		}
+		
+		/* Cart Container */
+        .cart-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-left: 20px; /* Space from the navigation */
+        }
+
+        .cart-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .cart-icon img {
+            width: 30px; 
+            height: 30px; 
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px; /* Position slightly above */
+            right: -10px; /* Position slightly to the right */
+            background-color: white;
+            color: black;
+            border-radius: 50%;
+            padding: 3px 6px;
+            font-size: 0.8em;
+            width: 15px; /* Fixed width */
+            height: 15px; /* Fixed height */
+            display: flex; /* Flexbox to center content */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            border: 1px solid white; /* Optional: white border for better visibility */
+        }
+
+
+        /* About Us Section */
+        #about-us {
+            padding: 50px;
+            text-align: center;
+        }
+
+        #about-us h2 {
+            font-size: 3em;
+            color: #888E4D;
+            margin-bottom: 20px;
+        }
+
+        #about-us p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Fun Fact Section */
+        .fun-facts {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .fact-item {
+            background-color: #F3FBE5;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .fact-item:hover {
+            transform: scale(1.05);
+        }
+
+        .fact-item h3 {
+            font-size: 1.8em;
+            color: #7F8452;
+        }
+
+        .fact-item p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            background-color: #F7F7F7;
+            padding: 50px 0;
+        }
+
+        .timeline h2 {
+            font-size: 2.5em;
+            color: #888E4D;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .timeline-events {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .event {
+            background-color: #F3FBE5;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .event h3 {
+            font-size: 1.8em;
+            color: #6C6F3B;
+        }
+
+        .event p {
+            font-size: 1.1em;
+            colo
+		}
+		
+		  /* Footer Social Icons */
+        .footer-social {
+            margin: 20px 0;
+        }
+
+        .footer-social a {
+            margin: 0 15px;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .footer-social a:hover {
+            color: #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #9A9F69;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+		
+		/* Back to Top Button */
+        .back-to-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #9A9F69;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            line-height: 40px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #787B51;
+        }
+		
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>𝙺𝙾𝙸𝙺𝙸𝙴𝚂</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="KOIKIES.html">Home</a></li>
+                <li><a href="KOIKIES - SHOP.html">Shop</a></li>
+                <li><a href="KOIKIES - ABOUT US.html">About Us</a></li>
+                <li><a href="KOIKIES - CONTACT US.html">Contact</a></li>
+            </ul>
+        </nav>
+		
+		<!-- Account Icon -->
+    <div class="cart-container">
+        <div class="account-icon">
+            <a href="KOIKIES - SIGN IN.html">
+                <img src="../../Pictures/Saved Pictures/User-icon-21.png" alt="Account" width="25" height="25">
+            </a>
+        </div>
+		  <div class="cart-container">
+            <div class="cart-icon">
+                <a href="shopping-cart.html">
+                    <img src="../../Pictures/Saved Pictures/black_shoppictbasket_1484336511-1.png" alt="Cart" width="30" height="30">
+                    <span class="cart-count" id="cartCount">0</span> <!-- Cart item count -->
+                </a>
+            </div>
+		</div>
+		</div>
+   </header>
+
+    <!-- About Us Section -->
+    <main>
+        <section id="about-us">
+            <h2>Welcome to 𝙺𝙾𝙸𝙺𝙸𝙴𝚂!</h2>
+            <p>KOIKIES isn't just about cookies – it's about spreading joy, one bite at a time. We blend the finest matcha and premium ingredients to create soft, chewy cookies that bring smiles to faces everywhere. Our cookies are crafted with love, baked with care, and shared with the world to create unforgettable experiences!</p>
+        </section>
+
+        <!-- Fun Facts Section -->
+        <section class="fun-facts">
+            <div class="fact-item">
+                <h3>🍪 Fun Fact #1</h3>
+                <p>We started baking cookies in a small kitchen – now we're sharing them across the globe!</p>
+            </div>
+
+            <div class="fact-item">
+                <h3>🍵 Fun Fact #2</h3>
+                <p>Each batch of our cookies contains matcha sourced directly from Japan's finest tea farms!</p>
+            </div>
+
+            <div class="fact-item">
+                <h3>🌟 Fun Fact #3</h3>
+                <p>Our secret ingredient? A sprinkle of happiness and a dash of love in every cookie.</p>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline">
+            <h2>Our Cookie Journey</h2>
+            <div class="timeline-events">
+                <!-- Event 1 -->
+                <div class="event">
+                    <h3>2022&nbsp;</h3>
+                    <p>KOIKIES was born in a cozy kitchen with a dream to bake the best matcha cookies in the world!</p>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event">
+                    <h3>2023</h3>
+                    <p>We perfected our recipe and started delivering KOIKIES across our local city!</p>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event">
+                    <h3>2024</h3>
+                    <p>KOIKIES became a global sensation, and we're now bringing joy to cookie lovers everywhere!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 KOIKIES. All Rights Reserved.</p>
+    </footer>
+	
+	 <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">↑</a>
+</body>
+</html>

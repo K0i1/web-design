@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOIKIES - Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+       body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            margin: 0;
+            padding: 0;
+            color: #4A4A4A;
+        }
+
+        /* Header */
+        header {
+            background-color: #9A9F69;
+            color: white;
+            padding: 15px;
+            position: static;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+        }
+		
+		nav a:hover {
+            color:#C4E6A6;
+		}
+		
+		/* Account Icon */
+         .account-icon {
+            margin-right: 20px; 
+       }
+
+       .account-icon img {
+            width: 25px;
+            height: 25px;
+		}
+		
+		/* Cart Container */
+        .cart-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-left: 20px; /* Space from the navigation */
+        }
+
+        .cart-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .cart-icon img {
+            width: 30px; 
+            height: 30px; 
+        }
+        .cart-count {
+            position: absolute;
+            top: -10px; /* Position slightly above */
+            right: -10px; /* Position slightly to the right */
+            background-color: white;
+            color: black;
+            border-radius: 50%;
+            padding: 3px 6px;
+            font-size: 0.8em;
+            width: 15px; /* Fixed width */
+            height: 15px; /* Fixed height */
+            display: flex; /* Flexbox to center content */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            border: 1px solid white; /* Optional: white border for better visibility */
+        }
+
+        /* Contact Us Section */
+        #contact-us {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        #contact-us h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            background-color: #888E4D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #6c6f3b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #9A9F69;
+            color: white;
+
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #9A9F69;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            line-height: 40px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #787B51;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>𝙺𝙾𝙸𝙺𝙸𝙴𝚂</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="KOIKIES.html">Home</a></li>
+                <li><a href="KOIKIES - SHOP.html">Shop</a></li>
+                <li><a href="KOIKIES - ABOUT US.html">About Us</a></li>
+                <li><a href="KOIKIES - CONTACT US.html">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Account Icon -->
+    <div class="cart-container">
+        <div class="account-icon">
+            <a href="KOIKIES - SIGN IN.html">
+                <img src="../../Pictures/Saved Pictures/User-icon-21.png" alt="Account" width="25" height="25">
+            </a>
+        </div>
+        <div class="cart-container">
+            <div class="cart-icon">
+                <a href="KOIKIES - SHOPPING CART.html">
+                    <img src="../../Pictures/Saved Pictures/black_shoppictbasket_1484336511-1.png" alt="Cart">
+                    <span class="cart-count" id="cartCount">0</span> <!-- Cart item count -->
+                </a>
+            </div>
+        </div>
+		</div>
+    </header>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us">
+        <h2>Let's get in touch!&nbsp;&nbsp;</h2>
+        <div class="contact-form">
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 KOIKIES. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">↑</a>
+
+</body>
+</html>
